@@ -11,6 +11,11 @@ describe Twilio::REST::Country do
     @country.local.instance_variable_get('@path').should == 'someUri/Local'
   end
 
+  it 'sets up a national resources object' do
+    @country.should respond_to(:national)
+    @country.national.instance_variable_get('@path').should == 'someUri/National'
+  end
+
   it 'sets up a toll_free resources object' do
     @country.should respond_to(:toll_free)
     @country.toll_free.instance_variable_get('@path').should == 'someUri/TollFree'
@@ -32,6 +37,11 @@ describe Twilio::REST::NumberType do
   it 'sets up a local resources object' do
     @incoming_phone_numbers.should respond_to(:local)
     @incoming_phone_numbers.local.instance_variable_get('@path').should == 'someUri/Local'
+  end
+
+  it 'sets up a national resources object' do
+    @incoming_phone_numbers.should respond_to(:national)
+    @incoming_phone_numbers.national.instance_variable_get('@path').should == 'someUri/National'
   end
 
   it 'sets up a toll_free resources object' do

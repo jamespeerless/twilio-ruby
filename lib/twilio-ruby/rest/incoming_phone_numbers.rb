@@ -4,7 +4,7 @@ module Twilio
       def initialize(path, client)
         super
         @submodule = :NumberType
-        resource :mobile, :local, :toll_free
+        resource :mobile, :local, :toll_free, :national
       end
 
       def buy(phone_number)
